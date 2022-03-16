@@ -65,6 +65,7 @@ def log_in(username, password):
             sleep(0.25)
             driver.find_element(By.ID, 'password').send_keys(password)
             driver.find_element(By.ID, 'loginbtn').click()
+            sleep(0.5)
            
             if driver.current_url == locators.moodle_dashboard_url and driver.title == locators.moodle_dashboard_title:
                 assert driver.current_url == locators.moodle_dashboard_url
