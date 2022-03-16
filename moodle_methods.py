@@ -86,8 +86,18 @@ def log_out():
 
 def create_new_user():
     # Navigate to 'Add a new user' form
-    driver.find_element(By.XPATH, '//span[contains(., "Site administration")]').click()
+
+    if not driver.find_element(By.XPATH, '//span[contains(., "Site administration")]').is_displayed():
+        try:
+            driver.find_element(By.CSS_SELECTOR, '.fa-bars').click()
+            sleep(0.25)
+            driver.find_element(By.XPATH, '//span[contains(., "Site administration")]').click()
+        except Exception:
+            print(Exception)
+    else:
+        driver.find_element(By.XPATH, '//span[contains(., "Site administration")]').click()
     sleep(0.25)
+    
     assert driver.find_element(By.LINK_TEXT, 'Users').is_displayed()
     linkchek = driver.find_element(By.LINK_TEXT, 'Users').is_displayed()
     print(f' ---- User link is displayed: {linkchek}')
