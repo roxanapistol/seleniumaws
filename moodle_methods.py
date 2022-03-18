@@ -138,12 +138,12 @@ def create_new_user():
     sleep(0.5)
 
     
-    driver.find_element(By.XPATH, '//label[contains(., "Create an alias/shortcut to the file")]').click()
-    sleep(0.5)
-    driver.find_element(By.XPATH, '//button[contains(text(), "Select this file")]').click()
-    sleep(0.5)
-    driver.find_element(By.ID, 'id_imagealt').send_keys(locators.pic_desc)
-    sleep(0.5)
+#     driver.find_element(By.XPATH, '//label[contains(., "Create an alias/shortcut to the file")]').click()
+#     sleep(0.5)
+#     driver.find_element(By.XPATH, '//button[contains(text(), "Select this file")]').click()
+#     sleep(0.5)
+#     driver.find_element(By.ID, 'id_imagealt').send_keys(locators.pic_desc)
+#     sleep(0.5)
     # populate Additional names section
     driver.find_element(By.LINK_TEXT, 'Additional names').click()
     sleep(0.5)
