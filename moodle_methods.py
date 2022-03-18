@@ -136,17 +136,7 @@ def create_new_user():
     driver.find_element(By.ID, 'id_description_editoreditable').send_keys(locators.description)
     sleep(0.5)
 
-    # upload picture
-    driver.find_element(By.CLASS_NAME, 'dndupload-arrow').click()
-    img_path = ['Server files', 'System', 'KS_Baking Series', 'KS_Baking Basics (The Fundamentals)', 'Course image', 'ftuhbco2t2tr8kkeukjr.jpg']
-    for path in img_path:
-        driver.find_element(By.LINK_TEXT, path).click()
-        sleep(0.25)
-
-    # select a radio button
-    # method 1 - click the radio button
-    #driver.find_element(By.XPATH, '//input[@value="4"]').click()
-    # method 2 - click the label attached to radio button
+    
     driver.find_element(By.XPATH, '//label[contains(., "Create an alias/shortcut to the file")]').click()
     sleep(0.25)
     driver.find_element(By.XPATH, '//button[contains(text(), "Select this file")]').click()
